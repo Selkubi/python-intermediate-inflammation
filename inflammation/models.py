@@ -61,3 +61,10 @@ def patient_normalise(data):
     normalised[normalised < 0] = 0
     return normalised
 
+def daily_sd(data):
+    """Calculate the daily sd of a 2D inflammation data array for each day.
+
+   :param data: A 2D data array with inflammation data (each row contains measurements for a single patient across all days).
+   :returns: An array of sd values of measurements for each day.
+   """
+    return np.std(data, axis=0)
